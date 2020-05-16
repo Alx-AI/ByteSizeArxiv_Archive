@@ -32,13 +32,12 @@ def convertPDF(activePDF):
 #Clean the text
 def cleanText(text):
     cleanedText = str(text)
-    cleanedText = repr(cleanedText)
     if "\nReferences\n" in text:
         cleanedText = cleanedText.rsplit("\nReferences\n", 1)[0] #Removes all references, starts from back
-    cleanedText = re.sub(r"(\\x\S\S)", '', cleanedText) #Remove page breaks and other pdf injections any combination of \x then two non whitespace characters
+    cleanedText = re.sub(r"(\x0c)", '', cleanedText) #Remove page breaks and other pdf injections any combination of \x then two non whitespace characters
     cleanedText = re.sub(r'-\n','', cleanedText)
-    cleanedText = re.sub(r'\\n-','', cleanedText) #Hyphens before & after new lines are usually added for continuation of a word
-    cleanedText = re.sub(r'\\n',' ',cleanedText)#Get rid of new lines replace with spaces
+    cleanedText = re.sub(r'\n-','', cleanedText) #Hyphens before & after new lines are usually added for continuation of a word
+    cleanedText = re.sub(r'\n',' ',cleanedText)#Get rid of new lines replace with spaces
     #Remove everything between parentheses or brackets 3 times to get most equations but leave most of the text
     for x in range(0,2):
         cleanedText = re.sub(r'(\(([^)^(]+)\))','',cleanedText) #removes everything inside of parentheses, have to re-run for nested
@@ -48,6 +47,7 @@ def cleanText(text):
     cleanedText = re.sub(r'\d','', cleanedText) #Remove all numbers
     cleanedText = re.sub(r' {2,}', ' ', cleanedText).strip() #Replace all multiple spaces with one space
     cleanedText = re.sub(r'(\. ){2,}', '. ', cleanedText).strip() #Replace all multiple period spaces with one space
+    cleanedText = re.sub(r'(\s\.\s)', '. ', cleanedText).strip() #Replace all space period space with period space
     cleanedText = str(cleanedText)
     cleanedText = cleanedText.lower()
     return cleanedText
@@ -84,9 +84,9 @@ def savePaper(cleanedText, name, saveDir):
     #Create the whole path
     savePath = saveDir + '/' + name + '.txt'
 
-    with open(str(savePath), 'w') as txtFile:
+    with open(str(savePath), 'w',encoding="utf8",newline='') as txtFile:
         #print (cleanedText)
-        txtFile.write(str(cleanedText.encode('utf-8')))
+        txtFile.write(str(cleanedText))
         
 
 #Go through preprocessing every file, return list of cleaned text combined with abstract and body separated by ##### and their IDs
