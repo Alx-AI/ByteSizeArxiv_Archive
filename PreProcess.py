@@ -37,8 +37,8 @@ def cleanText(text):
         cleanedText = cleanedText.rsplit("\nReferences\n", 1)[0] #Removes all references, starts from back
     cleanedText = re.sub(r"(\\x\S\S)", '', cleanedText) #Remove page breaks and other pdf injections any combination of \x then two non whitespace characters
     cleanedText = re.sub(r'-\n','', cleanedText)
-    cleanedText = re.sub(r'\n-','', cleanedText) #Hyphens before & after new lines are usually added for continuation of a word
-    cleanedText = re.sub(r'\n',' ',cleanedText)#Get rid of new lines replace with spaces
+    cleanedText = re.sub(r'\\n-','', cleanedText) #Hyphens before & after new lines are usually added for continuation of a word
+    cleanedText = re.sub(r'\\n',' ',cleanedText)#Get rid of new lines replace with spaces
     #Remove everything between parentheses or brackets 3 times to get most equations but leave most of the text
     for x in range(0,2):
         cleanedText = re.sub(r'(\(([^)^(]+)\))','',cleanedText) #removes everything inside of parentheses, have to re-run for nested
