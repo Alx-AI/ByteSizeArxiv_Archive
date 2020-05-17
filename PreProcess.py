@@ -85,8 +85,8 @@ def savePaper(cleanedText, name, saveDir):
     savePath = saveDir + '/' + name + '.txt'
 
     with open(str(savePath), 'w',encoding="utf8",newline='') as txtFile:
-        #print (cleanedText)
         txtFile.write(str(cleanedText))
+    print (cleanedText)
         
 
 #Go through preprocessing every file, return list of cleaned text combined with abstract and body separated by ##### and their IDs

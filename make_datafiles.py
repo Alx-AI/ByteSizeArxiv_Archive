@@ -13,8 +13,7 @@ import pickle as pkl
 dm_single_close_quote = '\u2019' # unicode
 dm_double_close_quote = '\u201d'
 # acceptable ways to end a sentence
-END_TOKENS = ['.', '!', '?', '...', "'", "`", '"',
-              dm_single_close_quote, dm_double_close_quote, ")"]
+END_TOKENS = ['.', '!', '?']
 
 all_train_urls = "url_lists/all_train.txt"
 all_val_urls = "url_lists/all_val.txt"

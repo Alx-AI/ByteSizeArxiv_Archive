@@ -27,7 +27,7 @@ start_time= time.time()
 
 #Downloads and pre-processes files, saving the text locally & times it 
 def main():
-    corpusAbstracts = Downloader.main('cat:cs.LG', 3)
+    corpusAbstracts = Downloader.main('cat:cs.LG', 50)
     PreProcess.main(corpusAbstracts,r'C:\Users\Al\Documents\ByteSizeArxiv\library')
 
 if __name__ == "__main__":
