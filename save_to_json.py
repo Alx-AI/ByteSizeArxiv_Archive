@@ -4,7 +4,7 @@ import hashlib
 import subprocess
 import collections
 
-import jso
+import json
 import tarfile
 import io
 import pickle as pkl
