@@ -10,7 +10,9 @@ import io
 import pickle as pkl
 
 dm_single_close_quote = '\u2019' # unicode
-dm_double_close_quote = '\u201d'
+dm_double_close_quote = '\u201d' 
+dm__fi_unicode='\ufb01'
+dm_ffi_unicode='\ufb03'
 
 def convert_txt_json():
 	# loop over all story files in directory
@@ -22,7 +24,7 @@ def convert_txt_json():
     with open(file,'r') as f:
         hashfound = False
         for line in f.readlines():
-            line=line.rstrip('\n').replace(dm_single_close_quote, '\'').replace(dm_double_close_quote, '\"')
+            line=line.rstrip('\n').replace(dm_single_close_quote, '\'').replace(dm_double_close_quote, '\"').replace(dm__fi_unicode, 'fi').replace(dm_ffi_unicode, 'ffi')
             if line == '#####':
                 hashfound = True
             elif hashfound:
