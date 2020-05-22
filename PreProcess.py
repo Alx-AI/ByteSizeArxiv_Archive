@@ -15,6 +15,7 @@ from pdfminer.layout import LAParams
 import pdfminer.layout
 import pdfminer.high_level
 import os
+import save_to_json
 
 #from keras.preprocessing.text import Tokenizer 
 #from keras.preprocessing.sequence import pad_sequences  
@@ -86,7 +87,7 @@ def savePaper(cleanedText, name, saveDir):
 
     with open(str(savePath), 'w',encoding="utf8",newline='') as txtFile:
         txtFile.write(str(cleanedText))
-    print (cleanedText)
+    #print (cleanedText)
         
 
 #Go through preprocessing every file, return list of cleaned text combined with abstract and body separated by ##### and their IDs

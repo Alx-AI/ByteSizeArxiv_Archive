@@ -15,12 +15,11 @@ dm_double_close_quote = '\u201d'
 # acceptable ways to end a sentence
 END_TOKENS = ['.', '!', '?']
 
-all_train_urls = "url_lists/all_train.txt"
-all_val_urls = "url_lists/all_val.txt"
-all_test_urls = "url_lists/all_test.txt"
+all_train_urls = "/library/all_train.txt"
+all_val_urls = "/library/all_val.txt"
+all_test_urls = "/library/all_test.txt"
 
-cnn_tokenized_stories_dir = "cnn_stories_tokenized"
-dm_tokenized_stories_dir = "    dm_stories_tokenized"
+tokenizedPapers = "/library"
 finished_files_dir = "finished_files"
 
 # These are the number of .story files we expect there to be in cnn_stories_dir
@@ -151,22 +150,22 @@ def write_to_tar(url_file, out_file, makevocab=False):
 
             # Look in the tokenized story dirs to find the .story file
             # corresponding to this url
-            if os.path.isfile(os.path.join(cnn_tokenized_stories_dir, s)):
-                story_file = os.path.join(cnn_tokenized_stories_dir, s)
+            if os.path.isfile(os.path.join(tokenizedPapers, s)):
+                story_file = os.path.join(tokenizedPapers, s)
             elif os.path.isfile(os.path.join(dm_tokenized_stories_dir, s)):
                 story_file = os.path.join(dm_tokenized_stories_dir, s)
             else:
                 print("Error: Couldn't find tokenized story file {} in either"
                       " tokenized story directories {} and {}. Was there an"
                       " error during tokenization?".format(
-                          s, cnn_tokenized_stories_dir,
+                          s, tokenizedPapers,
                           dm_tokenized_stories_dir))
                 # Check again if tokenized stories directories contain correct
                 # number of files
                 print("Checking that the tokenized stories directories {}"
                       " and {} contain correct number of files...".format(
-                          cnn_tokenized_stories_dir, dm_tokenized_stories_dir))
-                check_num_stories(cnn_tokenized_stories_dir,
+                          tokenizedPapers, dm_tokenized_stories_dir))
+                check_num_stories(tokenizedPapers,
                                   num_expected_cnn_stories)
                 check_num_stories(dm_tokenized_stories_dir,
                                   num_expected_dm_stories)
@@ -174,7 +173,7 @@ def write_to_tar(url_file, out_file, makevocab=False):
                     "Tokenized stories directories {} and {}"
                     " contain correct number of files but story"
                     " file {} found in neither.".format(
-                        cnn_tokenized_stories_dir,
+                        tokenizedPapers,
                         dm_tokenized_stories_dir, s)
                 )
 
@@ -236,8 +235,8 @@ if __name__ == '__main__':
     check_num_stories(dm_stories_dir, num_expected_dm_stories)
 
     # Create some new directories
-    if not os.path.exists(cnn_tokenized_stories_dir):
-        os.makedirs(cnn_tokenized_stories_dir)
+    if not os.path.exists(tokenizedPapers):
+        os.makedirs(tokenizedPapers)
     if not os.path.exists(dm_tokenized_stories_dir):
         os.makedirs(dm_tokenized_stories_dir)
     if not os.path.exists(finished_files_dir):
@@ -245,7 +244,7 @@ if __name__ == '__main__':
 
     # Run stanford tokenizer on both stories dirs,
     # outputting to tokenized stories directories
-    #tokenize_stories(cnn_stories_dir, cnn_tokenized_stories_dir)
+    #tokenize_stories(cnn_stories_dir, tokenizedPapers)
     #tokenize_stories(dm_stories_dir, dm_tokenized_stories_dir)
 
     # Read the tokenized stories, do a little postprocessing

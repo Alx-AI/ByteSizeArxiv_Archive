@@ -55,7 +55,7 @@ def tokenize_stories(textDir, tokedPapers):
 
 
 def main():
-    textDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library\toToken'
+    textDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library'
     tokenizedDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library\toked'
     tokenize_stories(textDir,tokenizedDir)
 
