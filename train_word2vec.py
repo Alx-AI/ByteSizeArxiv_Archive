@@ -14,7 +14,7 @@ from utils import count_data
 
 #for k, v in os.environ.items():
 #    print(f'{k}={v}')
- 
+
 os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
 print ("test")
 
@@ -72,7 +72,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='train word2vec embedding used for model initialization')
-    parser.add_argument('--path', help='root of the model', default= r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished")
+    parser.add_argument('--path', help='root of the model', default= os.environ['DATA'])
     parser.add_argument('--dim', action='store', type=int, default=128)
     args = parser.parse_args()
     #args = "--path=[\library\Finished]"

@@ -24,11 +24,14 @@ import Downloader
 import PreProcess
 import time
 start_time= time.time()
+#Change this directory to where you want the pre-processed text files
+saveDirectory= r'C:\Users\Al\Documents\ByteSizeArxiv\library'
 
 #Downloads and pre-processes files, saving the text locally & times it 
 def main():
     corpusAbstracts = Downloader.main('cat:cs.LG', 50)
-    PreProcess.main(corpusAbstracts,r'C:\Users\Al\Documents\ByteSizeArxiv\library')
+
+    PreProcess.main(corpusAbstracts,saveDirectory)
 
 if __name__ == "__main__":
     main()

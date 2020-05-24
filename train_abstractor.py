@@ -170,13 +170,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='training of the abstractor (ML)'
     )
-    parser.add_argument('--path', help='root of the model', default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished")
+    parser.add_argument('--path', help='root of the model', default = os.environ['DATA'])
 
 
     parser.add_argument('--vsize', type=int, action='store', default=30000,
                         help='vocabulary size')
     parser.add_argument('--emb_dim', type=int, action='store', default=128,
                         help='the dimension of word embedding')
+    ##w2v is the location of the word2vec.bin
     parser.add_argument('--w2v', action='store',
                         help='use pretrained word2vec embedding', default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\word2vec.128d.2k.bin")
     parser.add_argument('--n_hidden', type=int, action='store', default=256,

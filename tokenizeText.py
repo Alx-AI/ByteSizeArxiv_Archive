@@ -1,5 +1,7 @@
 import sys
 import os
+#TokenizeText requires coreNLP installed and for it to be added to the Java classpath 
+#Follow instructions here to install https://github.com/ChenRocks/cnn-dailymail
 os.environ['CLASSPATH'] = (r"C:\Users\Al\corenlp/*")
 os.environ['JAVA_HOME'] = (r'C:\Program Files\Java\jdk-14.0.1')
 import hashlib
