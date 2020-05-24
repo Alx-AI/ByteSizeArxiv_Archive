@@ -212,12 +212,13 @@ class BucketedGenerater(object):
         self._sort_key = sort_key
         self._batchify = batchify
         self._single_run = single_run
-        if fork:
-            ctx = mp.get_context('forkserver')
-            self._queue = ctx.Queue(queue_size)
-        else:
+        #if fork:
+        #    ctx = mp.get_context('forkserver')
+        #    self._queue = ctx.Queue(queue_size)
+        #else:
             # for easier debugging
-            self._queue = None
+        #    self._queue = None
+        self._queue = None
         self._process = None
 
     def __call__(self, batch_size: int):
@@ -228,8 +229,9 @@ class BucketedGenerater(object):
                 random.shuffle(hyper_batch)
                 random.shuffle(indexes)
             hyper_batch.sort(key=self._sort_key)
-            for i in indexes:
-                batch = self._batchify(hyper_batch[i:i+batch_size])
+            for i in range(indexes[0]):
+                testvar=hyper_batch[i:i+batch_size]
+                batch = self._batchify(testvar)
                 yield batch
 
         if self._queue is not None:
@@ -253,7 +255,8 @@ class BucketedGenerater(object):
             i = 0
             while True:
                 for batch in self._loader:
-                    yield from get_batches(self._prepro(batch))
+                    #yield from get_batches(self._prepro(batch))
+                    yield from get_batches(batch)
                 if self._single_run:
                     break
                 i += 1

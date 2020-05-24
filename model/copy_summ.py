@@ -196,13 +196,13 @@ class CopyLSTMDecoder(AttentionalLSTMDecoder):
         # compute the probabilty of each copying
         copy_prob = torch.sigmoid(self._copy(context, states[0][-1], lstm_in))
         # add the copy prob to existing vocab distribution
+        testVar=score*copy_prob
+        #testvar0=testVar[0]
+        theindex=extend_src.expand_as(score)
         lp = torch.log(
             ((-copy_prob + 1) * gen_prob
-            ).scatter_add(
-                dim=1,
-                index=extend_src.expand_as(score),
-                source=score * copy_prob
-        ) + 1e-8)  # numerical stability for log
+            ).scatter_add(dim=1,index=theindex,source=testVar) 
+            + 1e-8)  # numerical stability for log
         return lp, (states, dec_out), score
 
 

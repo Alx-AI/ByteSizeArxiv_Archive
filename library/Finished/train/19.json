@@ -1,0 +1,15 @@
+{
+    "id": "C:\\Users\\Al\\Documents\\ByteSizeArxiv\\library\\trainTokenized\\0605040v1",
+    "article": [
+        ". mit . press cambridge ma . r. h. strotz . myopia and inconsistency in dynamic utility maximization . review of economic studies . n. vieille and j. w. weibull . dynamic optimization with non exponential discounting on the uniqueness of solutions . technical report wp no . department of economics boston univeristy boston ma ."
+    ],
+    "abstract": [
+        "consider an agent interacting with an environment in cycles . in every interaction cycle the agent is rewarded for its performance . we compare the average reward u from cycle to m with the future discounted reward v from cycle k to infinity . we consider essentially arbitrary discount sequences and arbitrary reward sequences . we show that asymptotically u for m infinity and v for k infinity are equal provided both limits exist . further if the effective horizon grows linearly with k or faster then existence of the limit of u implies that the limit of v exists . conversely if the effective horizon grows linearly with k or slower then existence of the limit of v implies that the limit of u exists ."
+    ],
+    "extracted": [
+        0
+    ],
+    "score": [
+        0.10236220472440945
+    ]
+}

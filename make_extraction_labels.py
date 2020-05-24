@@ -5,13 +5,13 @@ import json
 from time import time
 from datetime import timedelta
 import multiprocessing as mp
-
+import cytoolz
 from cytoolz import curry, compose
 
 from utils import count_data
 from metric import compute_rouge_l
 
-
+os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
 try:
     DATA_DIR = os.environ['DATA']
 except KeyError:

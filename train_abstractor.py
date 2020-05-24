@@ -29,7 +29,7 @@ from utils import make_vocab, make_embedding
 # NOTE: bucket size too large may sacrifice randomness,
 #       to low may increase # of PAD tokens
 BUCKET_SIZE = 6400
-
+os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
 try:
     DATA_DIR = os.environ['DATA']
 except KeyError:
@@ -170,7 +170,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='training of the abstractor (ML)'
     )
-    parser.add_argument('--path', required=True, help='root of the model')
+    parser.add_argument('--path', help='root of the model', default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished")
 
 
     parser.add_argument('--vsize', type=int, action='store', default=30000,
@@ -178,7 +178,7 @@ if __name__ == '__main__':
     parser.add_argument('--emb_dim', type=int, action='store', default=128,
                         help='the dimension of word embedding')
     parser.add_argument('--w2v', action='store',
-                        help='use pretrained word2vec embedding')
+                        help='use pretrained word2vec embedding', default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\word2vec.128d.2k.bin")
     parser.add_argument('--n_hidden', type=int, action='store', default=256,
                         help='the number of hidden units of LSTM')
     parser.add_argument('--n_layer', type=int, action='store', default=1,

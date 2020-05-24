@@ -1,0 +1,9 @@
+{
+    "id": "C:\\Users\\Al\\Documents\\ByteSizeArxiv\\library\\trainTokenized\\0504001v1",
+    "article": [],
+    "abstract": [
+        "we consider the probability hierarchy for popperian finite learning and study the general properties of this hierarchy . we prove that the probability hierarchy is decidable i.e. there exists an algorithm that receives p _ and p _ and answers whether pfin type learning with the probability of success p _ is equivalent to pfin type learning with the probability of success p _ . to prove our result we analyze the topological structure of the probability hierarchy . we prove that it is well ordered in descending ordering and order equivalent to ordinal epsilon _ . this shows that the structure of the hierarchy is very complicated . using similar methods we also prove that for pfin type learning team learning and probabilistic learning are of the same power ."
+    ],
+    "extracted": [],
+    "score": []
+}

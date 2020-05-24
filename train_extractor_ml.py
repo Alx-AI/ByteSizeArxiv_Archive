@@ -27,7 +27,7 @@ from data.batcher import convert_batch_extract_ff, batchify_fn_extract_ff
 from data.batcher import convert_batch_extract_ptr, batchify_fn_extract_ptr
 from data.batcher import BucketedGenerater
 
-
+os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
 BUCKET_SIZE = 6400
 
 try:
@@ -183,7 +183,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='training of the feed-forward extractor (ff-ext, ML)'
     )
-    parser.add_argument('--path', required=True, help='root of the model')
+    parser.add_argument('--path',help='root of the model',default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished")
 
     # model options
     parser.add_argument('--net-type', action='store', default='rnn',
@@ -193,7 +193,7 @@ if __name__ == '__main__':
     parser.add_argument('--emb_dim', type=int, action='store', default=128,
                         help='the dimension of word embedding')
     parser.add_argument('--w2v', action='store',
-                        help='use pretrained word2vec embedding')
+                        help='use pretrained word2vec embedding',default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\word2vec.128d.2k.bin")
     parser.add_argument('--conv_hidden', type=int, action='store', default=100,
                         help='the number of hidden units of Conv')
     parser.add_argument('--lstm_hidden', type=int, action='store', default=256,
