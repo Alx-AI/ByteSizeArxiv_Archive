@@ -226,13 +226,17 @@ class BucketedGenerater(object):
             indexes = list(range(0, len(hyper_batch), batch_size))
             if not self._single_run:
                 # random shuffle for training batches
+                hyper_batch=list(hyper_batch)
                 random.shuffle(hyper_batch)
+                hyper_batch = tuple(hyper_batch)
                 random.shuffle(indexes)
-            hyper_batch.sort(key=self._sort_key)
-            for i in range(indexes[0]):
-                testvar=hyper_batch[i:i+batch_size]
-                batch = self._batchify(testvar)
+            theKey=self._sort_key
+            hyper_batch = list(hyper_batch)
+            hyper_batch = hyper_batch.sort(key=theKey)
+            for i in indexes:
+                batch = self._batchify(hyper_batch[i:i+batch_size])
                 yield batch
+
 
         if self._queue is not None:
             ctx = mp.get_context('forkserver')

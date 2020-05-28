@@ -27,9 +27,9 @@ from data.batcher import convert_batch_extract_ff, batchify_fn_extract_ff
 from data.batcher import convert_batch_extract_ptr, batchify_fn_extract_ptr
 from data.batcher import BucketedGenerater
 
-os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
-BUCKET_SIZE = 6400
 
+BUCKET_SIZE = 6400
+os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
 try:
     DATA_DIR = os.environ['DATA']
 except KeyError:

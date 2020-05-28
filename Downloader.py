@@ -2,7 +2,9 @@ import arxiv
 import urllib.request as libreq
 import feedparser
 from io import StringIO
+from pathlib import Path
 import os
+import argparse
 
 #from keras.preprocessing.text import Tokenizer 
 #from keras.preprocessing.sequence import pad_sequences  
@@ -10,23 +12,29 @@ import os
 #from tensorflow.keras.models import Model
 #from tensorflow.keras.callbacks import EarlyStopping
 import warnings
-
+os.environ['LIB'] = r'C:\Users\Al\Documents\ByteSizeArxiv\library'
+os.environ['DATA'] = r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished'
 
 #Run a query by Arxiv category, in our case "cat:cs.LG" for machine learning
 #Returns arrays of Entries, PDF's, and Abstracts
 def queryByCat(Category, maxResults):
+
     # Base api query url
     base_url = 'http://export.arxiv.org/api/query?'
 
     # Search parameters
     #search_query = 'cat:cs.LG' # search in the machine learning category
     search_query = Category
-    start = 0                     # retreive the first 5 results
-    max_results = maxResults
+    start = 2000                     # retreive the first 5 results
+    #max_results = maxResults
+    max_results = 50
+    # Search parameters
+    #search_query = 'cat:cs.LG' # search in the machine learning category
 
-    query = 'search_query=%s&start=%i&max_results=%i' % (search_query,
+    query = 'search_query=%s&start=%i&max_results=%i&submitted_date=' % (search_query,
                                                         start,
-                                                        max_results)
+                                                        max_results)                                                    
+                                                
     #List of paper entries with all info
     corpusEntry=[]
     #Corresponding list of pdf download links 
@@ -68,24 +76,37 @@ def queryByCat(Category, maxResults):
 
 #Download the PDF's and save them as their Entry ID
 def downloadNewPDFS(corpusEntry, corpusPDF, maxResults):
-    library = r'C:\Users\Al\Documents\ByteSizeArxiv\library'
-    empty = False
-    if os.stat(r'C:\Users\Al\Documents\ByteSizeArxiv\library/library.txt').st_size == 0:
-        empty = True
-    for i in range(0, maxResults-1):
-        with open(r'C:\Users\Al\Documents\ByteSizeArxiv\library/library.txt', 'r+') as myfile:
-            if  corpusPDF[i]['pdf_url'] not in myfile.read():
-                if not empty:
-                    myfile.write("\n")                
-                myfile.write(corpusPDF[i]['pdf_url'])
-                empty = False
+    library = Path(os.environ['LIB'])
+    toDownload = library / "toDownload.txt"
+    library = library / "library.txt"
+    
+    for i in range(0, maxResults):
+        write = True
+        with open(library, 'r+') as myfile:
+            fileinQ= corpusPDF[i]['pdf_url']
+            if  fileinQ in myfile.read():
+                write = False
+            else:
+                if not os.stat(library).st_size==0:
+                    myfile.write("\n")
+                myfile.write(fileinQ)
+            myfile.close()
+
+        if write:
+            with open(toDownload, 'a+') as myfile:
+                fileinQ= corpusPDF[i]['pdf_url']
+                if not os.stat(toDownload).st_size==0:
+                    myfile.write("\n")
+                myfile.write(fileinQ)
+                myfile.close()
                 # Override the default filename format by defining a slugify function. So can force pdf link for all even without listed
-                arxiv.download(corpusPDF[i],library, slugify=lambda x: corpusEntry[i].get('id').split('/')[-1])
+            arxiv.download(corpusPDF[i],os.environ['LIB'], slugify=lambda x: corpusEntry[i].get('id').split('/')[-1])
+
                 
 
 
 #Return Abstracts to pass them on to split abstract and the rest
-def main(category = 'cat:cs.LG',maxResults = 10):
+def main(category ,maxResults):
     #create arrays for the corpus entries as a whole, the pdf download links, and the abstracts
     corpusEntry, corpusPDF, corpusAbstract = [],[],[]
     #run query
@@ -96,7 +117,13 @@ def main(category = 'cat:cs.LG',maxResults = 10):
     return corpusAbstract
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description='Category and number of results to download')
+    parser.add_argument('--category', type=str, default = 'cat:cs.LG', 
+                        help = 'the arxiv category from which to download new papers')
+    parser.add_argument('--results', type=int, default = '50', 
+                        help = 'the number of most recent papers to query')
+    args = parser.parse_args()                   
+    main(category = args.category, maxResults = args.results)
 
 
 

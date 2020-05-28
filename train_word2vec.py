@@ -12,12 +12,7 @@ import gensim
 
 from utils import count_data
 
-#for k, v in os.environ.items():
-#    print(f'{k}={v}')
-
 os.environ['DATA'] = (r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished')
-print ("test")
-
 try:
     DATA_DIR = os.environ['DATA']
 except KeyError:
@@ -42,18 +37,13 @@ def main(args):
                         level=logging.INFO)
     start = time()
     save_dir = args.path
-    #save_dir = args
     if not exists(save_dir):
-        print("Bad Directory")
+        os.makedirs(save_dir)
         print(save_dir)
-        return 
-        #os.makedirs(save_dir)
 
     sentences = Sentences()
     model = gensim.models.Word2Vec(
-        size=args.dim, min_count=5, workers=16, sg=1)
-    #model = gensim.models.Word2Vec(
-    #    size=128, min_count=5, workers=16, sg=1)
+        size=args.dim, min_count=5, workers=5, sg=1)
     model.build_vocab(sentences)
     print('vocab built in {}'.format(timedelta(seconds=time()-start)))
     model.train(sentences,
@@ -71,10 +61,10 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='train word2vec embedding used for model initialization')
-    parser.add_argument('--path', help='root of the model', default= os.environ['DATA'])
+        description='train word2vec embedding used for model initialization'
+    )
+    parser.add_argument('--path', help='root of the model', default = r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\W2V')
     parser.add_argument('--dim', action='store', type=int, default=128)
     args = parser.parse_args()
-    #args = "--path=[\library\Finished]"
-    #args = r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished'
+
     main(args)

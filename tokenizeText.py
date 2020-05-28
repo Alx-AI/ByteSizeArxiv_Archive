@@ -26,12 +26,13 @@ def tokenize_stories(textDir, tokedPapers):
     print("Making list of files to tokenize...")
     with open("mapping.txt", "w") as f:
         for p in papers:
-            f.write(
-                "{} \t {}\n".format(
-                    os.path.join(textDir, p),
-                    os.path.join(tokedPapers, p)
+            if p.endswith('.txt'):
+                f.write(
+                    "{} \t {}\n".format(
+                        os.path.join(textDir, p),
+                        os.path.join(tokedPapers, p)
+                    )
                 )
-            )
     command = ['java', 'edu.stanford.nlp.process.PTBTokenizer',
                '-ioFileList', '-preserveLines', 'mapping.txt']
     print("Tokenizing {} files in {} and saving in {}...".format(
@@ -43,22 +44,29 @@ def tokenize_stories(textDir, tokedPapers):
 
     # Check that the tokenized stories directory contains the same number of
     # files as the original directory
-    num_orig = len(os.listdir(textDir))
+    num_orig = len(papers)
     num_tokenized = len(os.listdir(tokedPapers))
     if num_orig != num_tokenized:
-        raise Exception(
+        """raise Exception(
             "The tokenized stories directory {} contains {} files, but it "
             "should contain the same number as {} (which has {} files). Was"
             " there an error during tokenization?".format(
                 tokedPapers, num_tokenized, textDir, num_orig)
-        )
+        )"""
+        print(
+            "The tokenized stories directory {} contains {} files, but it "
+            "should contain the same number as {} (which has {} files). Was"
+            " there an error during tokenization?".format(
+                tokedPapers, num_tokenized, textDir, num_orig))
     print("Successfully finished tokenizing {} to {}.\n".format(
         textDir, tokedPapers))
 
 
-def main():
-    textDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library'
-    tokenizedDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library\toked'
+def main(preDir,postDir):
+    #textDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library'
+    textDir = preDir
+    #tokenizedDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library\toked'
+    tokenizedDir = postDir
     tokenize_stories(textDir,tokenizedDir)
 
 if __name__ == "__main__":

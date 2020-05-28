@@ -91,10 +91,10 @@ def savePaper(cleanedText, name, saveDir):
         
 
 #Go through preprocessing every file, return list of cleaned text combined with abstract and body separated by ##### and their IDs
-def preprocessLibrary(libraryDir, libraryAbs):
-    libraryPath = libraryDir + r'/library.txt'
+def preprocessLibrary(toDownloadDir, libraryAbs):
+    downloadPath = toDownloadDir + r'/toDownload.txt'
     #iterate through each file
-    with open(libraryPath) as lib:
+    with open(downloadPath) as lib:
         #create list that will be returned
         cleanedPapers = []
         names = []
@@ -104,7 +104,7 @@ def preprocessLibrary(libraryDir, libraryAbs):
             #print(line)
             name = line.rsplit('/',1)[1]
             name = re.sub(r'\n','', name)
-            activePDF = libraryDir + '/' + name + '.pdf'
+            activePDF = toDownloadDir + '/' + name + '.pdf'
             #Convert pdf to a string
             text = convertPDF(activePDF)
             #clean the text including removing artifacts of conversion
@@ -119,10 +119,10 @@ def preprocessLibrary(libraryDir, libraryAbs):
 
 
 
-def main(corpusAbstracts,libraryDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library'):
-    cleanedPapers,names = preprocessLibrary(libraryDir,corpusAbstracts)
+def main(corpusAbstracts,toDownloadDir = r'C:\Users\Al\Documents\ByteSizeArxiv\library'):
+    cleanedPapers,names = preprocessLibrary(toDownloadDir,corpusAbstracts)
     for idx, paper in enumerate(cleanedPapers):
-        savePaper(paper,names[idx],libraryDir)
+        savePaper(paper,names[idx],toDownloadDir)
 
 if __name__ == "__main__":
     main()

@@ -22,16 +22,18 @@ import boto3
 import os
 import Downloader
 import PreProcess
+import tokenizeText
 import time
+from pathlib import Path
 start_time= time.time()
 #Change this directory to where you want the pre-processed text files
-saveDirectory= r'C:\Users\Al\Documents\ByteSizeArxiv\library'
-
+os.environ['LIB'] = r'C:\Users\Al\Documents\ByteSizeArxiv\library'
+os.environ['DATA'] = r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished'
 #Downloads and pre-processes files, saving the text locally & times it 
 def main():
     corpusAbstracts = Downloader.main('cat:cs.LG', 50)
-
-    PreProcess.main(corpusAbstracts,saveDirectory)
+    PreProcess.main(corpusAbstracts,os.environ['LIB'])
+    tokenizeText.main(os.environ['LIB'],os.environ['DATA'])
 
 if __name__ == "__main__":
     main()

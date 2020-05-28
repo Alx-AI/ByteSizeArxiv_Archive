@@ -4,7 +4,7 @@ from os.path import join
 from time import time
 from datetime import timedelta
 from itertools import starmap
-from os.path import join, exists
+
 from cytoolz import curry, reduce
 
 import torch
@@ -17,7 +17,7 @@ def get_basic_grad_fn(net, clip_grad, max_grad=1e2):
     def f():
         grad_norm = clip_grad_norm_(
             [p for p in net.parameters() if p.requires_grad], clip_grad)
-        #grad_norm = grad_norm.item()
+        grad_norm = grad_norm.item()
         if max_grad is not None and grad_norm >= max_grad:
             print('WARNING: Exploding Gradients {:.2f}'.format(grad_norm))
             grad_norm = max_grad
@@ -139,7 +139,7 @@ class BasicTrainer(object):
         self._pipeline = pipeline
         self._save_dir = save_dir
         self._logger = tensorboardX.SummaryWriter(join(save_dir, 'log'))
-        if not exists(join(save_dir,'ckpt')):
+        if not os.path.exists(join(save_dir, 'ckpt')):
             os.makedirs(join(save_dir, 'ckpt'))
 
         self._ckpt_freq = ckpt_freq
@@ -198,8 +198,8 @@ class BasicTrainer(object):
             self._best_val = val_metric
         elif ((val_metric < self._best_val and self._val_mode == 'loss')
               or (val_metric > self._best_val and self._val_mode == 'score')):
-                self._current_p = 0
-                self._best_val = val_metric
+            self._current_p = 0
+            self._best_val = val_metric
         else:
             self._current_p += 1
         return self._current_p >= self._patience
@@ -209,10 +209,10 @@ class BasicTrainer(object):
             start = time()
             print('Start training')
             while True:
-                #print(self._step)
                 log_dict = self._pipeline.train_step()
                 self._step += 1
                 self.log(log_dict)
+                #Manual Loss stop.. better way to do this?
                 if self._running_loss <= .05:
                     stop = self.checkpoint()
                     if stop:

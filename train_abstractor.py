@@ -112,7 +112,7 @@ def build_batchers(word2id, cuda, debug):
 def main(args):
     # create data batcher, vocabulary
     # batcher
-    with open(join(DATA_DIR, 'vocab_cnt.pkl'), 'rb') as f:
+    with open(join(DATA_DIR,'train', 'vocab_cnt.pkl'), 'rb') as f:
         wc = pkl.load(f)
     word2id = make_vocab(wc, args.vsize)
     train_batcher, val_batcher = build_batchers(word2id,
@@ -170,16 +170,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='training of the abstractor (ML)'
     )
-    parser.add_argument('--path', help='root of the model', default = os.environ['DATA'])
+    parser.add_argument('--path', help='root of the model', default = r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\Abstractor' )
 
 
     parser.add_argument('--vsize', type=int, action='store', default=30000,
                         help='vocabulary size')
     parser.add_argument('--emb_dim', type=int, action='store', default=128,
                         help='the dimension of word embedding')
-    ##w2v is the location of the word2vec.bin
-    parser.add_argument('--w2v', action='store',
-                        help='use pretrained word2vec embedding', default = r"C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\word2vec.128d.2k.bin")
+    parser.add_argument('--w2v', action='store', default = r'C:\Users\Al\Documents\ByteSizeArxiv\library\Finished\W2V\word2vec.128d.3k.bin',
+                        help='use pretrained word2vec embedding')
     parser.add_argument('--n_hidden', type=int, action='store', default=256,
                         help='the number of hidden units of LSTM')
     parser.add_argument('--n_layer', type=int, action='store', default=1,
