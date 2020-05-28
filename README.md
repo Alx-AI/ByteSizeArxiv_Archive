@@ -1,10 +1,22 @@
 For use downloading, preprocessing, and ideally summarizing arxiv articles as they are posted.
-Use DL&PP to download and preprocess 
-tokenizeText to tokenize
+
+Model compatability checklist:
+word2vec - done
+extraction labels - done
+-------------------------
+abstractor - incomplete
+extractor - incomplete
+full model - incomplete
+
+
+Use "DL&PP" to download and preprocess 
+"tokenizeText" to tokenize
 run new make data to pack the tokenized data into jsons within tars
 unzip the tars and you are prepared for the original "Train your own models" section here:https://github.com/ChenRocks/fast_abs_rl pasted below
-*Note you can skip all of the steps above if you use the already converted files in library/finished/train or test or val
-Make sure to change the 'DATA' environmental variable and all Paths in 
+Make sure to change the 'DATA' environmental variable, universal pathing structure under construction
+
+
+
 To re-train our best model:
 
     pretrained a word2vec word embedding
