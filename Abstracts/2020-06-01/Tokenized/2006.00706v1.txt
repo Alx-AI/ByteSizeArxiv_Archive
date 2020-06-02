@@ -1,0 +1,21 @@
+Differentially Private Combinatorial Semi Bandits
+#####
+In this paper we study Combinatorial Semi Bandits that is an extension
+of classic Multi Armed Bandits under Differential Privacy and
+stronger Local Differential Privacy setting . Since the server receives
+more information from users in CSB it usually causes additional dependence on
+the dimension of data which is a notorious side effect for privacy preserving
+learning . However for CSB under two common smoothness assumptions
+cite we show it is possible to remove
+this side effect . In detail for B _ bounded smooth CSB under either
+varepsilon LDP or varepsilon DP we prove the optimal regret bound is
+Theta frac mB ^ _ ln T Delta epsilon ^ or
+tilde frac mB ^ _ ln T respectively
+where T is time period Delta is the gap of rewards and m is the number
+of base arms by proposing novel algorithms and matching lower bounds . For
+B _ bounded smooth CSB under varepsilon DP we also prove the optimal
+regret bound is tilde frac mKB ^ _ ln T with
+both upper bound and lower bound where K is the maximum number of feedback
+in each round . All above results nearly match corresponding non private optimal
+rates which imply there is no additional price for differentially
+private CSB in above common settings .

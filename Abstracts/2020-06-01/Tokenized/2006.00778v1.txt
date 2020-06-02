@@ -1,0 +1,20 @@
+Variational Bayesian Inference for Crowdsourcing Predictions
+#####
+Crowdsourcing has emerged as an effective means for performing a number of
+machine learning tasks such as annotation and labelling of images and other
+data sets . In most early settings of crowdsourcing the task involved
+classification that is assigning one of a discrete set of labels to each task .
+Recently however more complex tasks have been attempted including asking
+crowdsource workers to assign continuous labels or predictions . In essence
+this involves the use of crowdsourcing for function estimation . We are
+motivated by this problem to drive applications such as collaborative
+prediction that is harnessing the wisdom of the crowd to predict quantities
+more accurately . To do so we propose a Bayesian approach aimed specifically at
+alleviating overfitting a typical impediment to accurate prediction models in
+practice . In particular we develop a variational Bayesian technique for two
+different worker noise models one that assumes workers noises are
+independent and the other that assumes workers noises have a latent low rank
+structure . Our evaluations on synthetic and real world datasets demonstrate
+that these Bayesian approaches perform significantly better than existing
+non Bayesian approaches and are thus potentially useful for this class of
+crowdsourcing problems .

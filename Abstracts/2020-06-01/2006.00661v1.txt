@@ -1,0 +1,19 @@
+Submodular Bandit Problem Under Multiple Constraints
+#####
+The linear submodular bandit problem was proposed to simultaneously address
+diversified retrieval and online learning in a recommender system. If there is
+no uncertainty  this problem is equivalent to a submodular maximization problem
+under a cardinality constraint. However  in some situations  recommendation
+lists should satisfy additional constraints such as budget constraints  other
+than a cardinality constraint. Thus  motivated by diversified retrieval
+considering budget constraints  we introduce a submodular bandit problem under
+the intersection of  l  knapsacks and a  k  system constraint. Here  k  system
+constraints form a very general class of constraints including cardinality
+constraints and the intersection of  k  matroid constraints. To solve this
+problem  we propose a non greedy algorithm that adaptively focuses on a
+standard or modified upper confidence bound. We provide a high probability
+upper bound of an approximation regret  where the approximation ratio matches
+that of a fast offline algorithm. Moreover  we perform experiments under
+various combinations of constraints using a synthetic and two real world
+datasets and demonstrate that our proposed methods outperform the existing
+baselines.

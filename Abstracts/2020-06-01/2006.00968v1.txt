@@ -1,0 +1,21 @@
+Bayesian Sparse Factor Analysis with Kernelized Observations
+#####
+Latent variable models for multi view learning attempt to find
+low dimensional projections that fairly capture the correlations among multiple
+views that characterise each datum. High dimensional views in medium sized
+datasets and non linear problems are traditionally handled by kernel methods 
+inducing a  linear function between the latent projection and the data
+itself. However  they usually come with scalability issues and exposition to
+overfitting. To overcome these limitations  instead of imposing a kernel
+function  here we propose an alternative method. In particular  we combine
+probabilistic factor analysis with what we refer to as kernelized observations 
+in which the model focuses on reconstructing not the data itself  but its
+correlation with other data points measured by a kernel function. This model
+can combine several types of views   can handle
+heterogeneous data and work in semi supervised settings. Additionally  by
+including adequate priors  it can provide compact solutions for the kernelized
+observations  and
+can include feature selection capabilities. Using several public databases  we
+demonstrate the potential of our approach  w.r.t. common
+multi view learning models such as kernel canonical correlation analysis or
+manifold relevance determination gaussian processes latent variable models.

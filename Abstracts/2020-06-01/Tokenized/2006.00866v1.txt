@@ -1,0 +1,12 @@
+You say Normalizing Flows I see Bayesian Networks
+#####
+Normalizing flows have emerged as an important family of deep neural networks
+for modelling complex probability distributions . In this note we revisit their
+coupling and autoregressive transformation layers as probabilistic graphical
+models and show that they reduce to Bayesian networks with a pre defined
+topology and a learnable density at each node . From this new perspective we
+provide three results . First we show that stacking multiple transformations in
+a normalizing flow relaxes independence assumptions and entangles the model
+distribution . Second we show that a fundamental leap of capacity emerges when
+the depth of affine flows exceeds transformation layers . Third we prove the
+non universality of the affine normalizing flow regardless of its depth .

@@ -1,0 +1,16 @@
+Robust Reinforcement Learning with Wasserstein Constraint
+#####
+Robust Reinforcement Learning aims to find the optimal policy with some
+extent of robustness to environmental dynamics. Existing learning algorithms
+usually enable the robustness through disturbing the current state or
+simulating environmental parameters in a heuristic way  which lack quantified
+robustness to the system dynamics . To overcome
+this issue  we leverage Wasserstein distance to measure the disturbance to the
+reference transition kernel. With Wasserstein distance  we are able to connect
+transition kernel disturbance to the state disturbance  i.e. reduce an
+infinite dimensional optimization problem to a finite dimensional risk aware
+problem. Through the derived risk aware optimal Bellman equation  we show the
+existence of optimal robust policies  provide a sensitivity analysis for the
+perturbations  and then design a novel robust learning algorithm  Wasserstein
+Robust Advantage Actor Critic algorithm . The effectiveness of the
+proposed algorithm is verified in the Cart Pole environment.

@@ -1,0 +1,18 @@
+Exit Time Analysis for Approximations of Gradient Descent Trajectories
+  Around Saddle Points
+#####
+This paper considers the problem of understanding the exit time for
+trajectories of gradient related first order methods from saddle neighborhoods
+under some initial boundary conditions. Given the  flat  geometry around saddle
+points  first order methods can struggle in escaping these regions in a fast
+manner due to the small magnitudes of gradients encountered. In particular 
+while it is known that gradient related first order methods escape
+strict saddle neighborhoods  existing literature does not explicitly leverage
+the local geometry around saddle points in order to control behavior of
+gradient trajectories. It is in this context that this paper puts forth a
+rigorous geometric analysis of the gradient descent method around strict saddle
+neighborhoods using matrix perturbation theory. In doing so  it provides a key
+result that can be used to generate an approximate gradient trajectory for any
+given initial conditions. In addition  the analysis leads to a linear exit time
+solution for gradient descent method under certain necessary initial conditions
+for a class of strict saddle functions.

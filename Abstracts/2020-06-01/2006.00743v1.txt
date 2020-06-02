@@ -1,0 +1,12 @@
+Provable guarantees for decision tree induction  the agnostic setting
+#####
+We give strengthened provable guarantees on the performance of widely
+employed and empirically successful . While prior works have focused on the realizable setting  we
+consider the more realistic and challenging  setting. We show
+that for all monotone functions  f  and parameters  s in  mathbb   these
+heuristics construct a decision tree of size  s^  tilde   varepsilon^    that achieves error   le  mathsf_s    varepsilon  
+where   mathsf_s  denotes the error of the optimal size  s  decision tree
+for  f . Previously  such a guarantee was not known to be achievable by any
+algorithm  even one that is not based on top down heuristics. We complement our
+algorithmic guarantee with a near matching  s^  tilde   lower
+bound.

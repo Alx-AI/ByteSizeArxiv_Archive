@@ -1,0 +1,9 @@
+Using competency questions to select optimal clustering structures for
+  residential energy consumption patterns
+#####
+During cluster analysis domain experts and visual analysis are frequently
+relied on to identify the optimal clustering structure. This process tends to
+be adhoc  subjective and difficult to reproduce. This work shows how competency
+questions can be used to formalise expert knowledge and application
+requirements for context specific evaluation of a clustering application in the
+residential energy consumption sector.

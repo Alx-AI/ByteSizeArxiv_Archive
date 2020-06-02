@@ -1,0 +1,18 @@
+Heart Rate Estimation from Face Videos for Student Assessment
+Experiments on edBB
+#####
+In this study we estimate the heart rate from face videos for student
+assessment . This information could be very valuable to track their status along
+time and also to estimate other data such as their attention level or the
+presence of stress that may be caused by cheating attempts . The recent
+edBBplat a platform for student behavior modelling in remote education is
+considered in this study . This platform permits to capture several signals
+from a set of sensors that capture biometric and behavioral data RGB and near
+infrared cameras microphone EEG band mouse smartwatch and keyboard among
+others . In the experimental framework of this study we focus on the RGB and
+near infrared video sequences for performing heart rate estimation applying
+remote photoplethysmography techniques . The experiments include behavioral and
+physiological data from different students completing a collection of tasks
+related to e learning . Our proposed face heart rate estimation approach is
+compared with the heart rate provided by the smartwatch achieving very
+promising results for its future deployment in e learning applications .

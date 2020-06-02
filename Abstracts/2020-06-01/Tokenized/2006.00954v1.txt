@@ -1,0 +1,17 @@
+One Versus all for deep Neural Network Incertitude
+quantification
+#####
+Deep neural networks are powerful learning models yet their results
+are not always reliable . This is due to the fact that modern DNNs are usually
+uncalibrated and we can not characterize their epistemic uncertainty . In this
+work we propose a new technique to quantify the epistemic uncertainty of data
+easily . This method consists in mixing the predictions of an ensemble of DNNs
+trained to classify One class vs All the other classes with predictions
+from a standard DNN trained to perform All vs All classification . On the
+one hand the adjustment provided by the AVA DNN to the score of the base
+classifiers allows for a more fine grained inter class separation . On the other
+hand the two types of classifiers enforce mutually their detection of
+out of distribution samples circumventing entirely the requirement of
+using such samples during training . Our method achieves state of the art
+performance in quantifying OOD data across multiple datasets and architectures
+while requiring little hyper parameter tuning .

@@ -1,0 +1,19 @@
+BadNL  Backdoor Attacks Against NLP Models
+#####
+Machine learning  has progressed rapidly during the past decade and ML
+models have been deployed in various real world applications. Meanwhile 
+machine learning models have been shown to be vulnerable to various security
+and privacy attacks. One attack that has attracted a great deal of attention
+recently is the backdoor attack. Specifically  the adversary poisons the target
+model training set  to mislead any input with an added secret trigger to a
+target class  while keeping the accuracy for original inputs unchanged.
+  Previous backdoor attacks mainly focus on computer vision tasks. In this
+paper  we present the first systematic investigation of the backdoor attack
+against models designed for natural language processing  tasks.
+Specifically  we propose three methods to construct triggers in the NLP
+setting  including Char level  Word level  and Sentence level triggers. Our
+Attacks achieve an almost perfect success rate without jeopardizing the
+original model utility. For instance  using the word level triggers  our
+backdoor attack achieves   backdoor accuracy with only a drop of .  
+.   and .  in the models utility  for the IMDB  Amazon  and Stanford
+Sentiment Treebank datasets  respectively.

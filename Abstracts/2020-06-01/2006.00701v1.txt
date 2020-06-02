@@ -1,0 +1,17 @@
+Locally Differentially Private  Bandits Learning
+#####
+We study locally differentially private  bandits learning in this paper.
+First  we propose simple black box reduction frameworks that can solve a large
+family of context free bandits learning problems with LDP guarantee. Based on
+our frameworks  we can improve previous best results for private bandits
+learning with one point feedback  such as private Bandits Convex Optimization
+etc  and obtain the first results for Bandits Convex Optimization  with
+multi point feedback under LDP. LDP guarantee and black box nature make our
+frameworks more attractive in real applications compared with previous
+specifically designed and relatively weaker differentially private 
+context free bandits algorithms. Further  we also extend our algorithm to
+Generalized Linear Bandits with regret bound
+  tilde  mathcal  T^  varepsilon   under    LDP
+which is conjectured to be optimal. Note given existing   Omega  lower bound
+for DP contextual linear bandits   our result shows
+a fundamental difference between LDP and DP contextual bandits learning.

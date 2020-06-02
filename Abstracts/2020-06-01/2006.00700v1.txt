@@ -1,0 +1,11 @@
+When Machine Learning Meets Multiscale Modeling in Chemical Reactions
+#####
+Due to the intrinsic complexity and nonlinearity of chemical reactions 
+direct applications of traditional machine learning algorithms may face with
+many difficulties. In this study  through two concrete examples with biological
+background  we illustrate how the key ideas of multiscale modeling can help to
+reduce the computational cost of machine learning a lot  as well as how machine
+learning algorithms perform model reduction automatically in a time scale
+separated system. Our study highlights the necessity and effectiveness of an
+integration of machine learning algorithms and multiscale modeling during the
+study of chemical reactions.

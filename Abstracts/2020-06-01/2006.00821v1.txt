@@ -1,0 +1,21 @@
+Thermal Object Detection using Domain Adaptation through Style
+  Consistency
+#####
+A recent fatal accident of an autonomous vehicle opens a debate about the use
+of infrared technology in the sensor suite for autonomous driving to increase
+visibility for robust object detection. Thermal imaging has an advantage over
+lidar  radar  and camera because it can detect the heat difference emitted by
+objects in the infrared spectrum. In contrast  lidar and camera capture in the
+visible spectrum  and adverse weather conditions can impact their accuracy. The
+limitations of object detection in images from conventional imaging sensors can
+be catered to by thermal images. This paper presents a domain adaptation method
+for object detection in thermal images. We explore multiple ideas of domain
+adaption. First  a generative adversarial network is used to transfer the
+low level features from the visible spectrum to the infrared spectrum domain
+through style consistency. Second  a cross domain model with style consistency
+is used for object detection in the infrared spectrum by transferring the
+trained visible spectrum model. The proposed strategies are evaluated on
+publicly available thermal image datasets .
+We find that adapting the low level features from the source domain to the
+target domain through domain adaptation increases in mean average precision by
+approximately  .

@@ -1,0 +1,17 @@
+DPDnet A Robust People Detector using Deep Learning with an Overhead
+Depth Camera
+#####
+In this paper we propose a method based on deep learning that detects
+multiple people from a single overhead depth image with high reliability . Our
+neural network called DPDnet is based on two fully convolutional
+encoder decoder neural blocks based on residual layers . The Main Block takes a
+depth image as input and generates a pixel wise confidence map where each
+detected person in the image is represented by a Gaussian like distribution .
+The refinement block combines the depth image and the output from the main
+block to refine the confidence map . Both blocks are simultaneously trained
+end to end using depth images and head position labels . The experimental work
+shows that DPDNet outperforms state of the art methods with accuracies greater
+than in three different publicly available datasets without retraining not
+fine tuning . In addition the computational complexity of our proposal is
+independent of the number of people in the scene and runs in real time using
+conventional GPUs .

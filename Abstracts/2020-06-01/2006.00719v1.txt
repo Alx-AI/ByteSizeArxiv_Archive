@@ -1,0 +1,26 @@
+ADAHESSIAN  An Adaptive Second Order Optimizer for Machine Learning
+#####
+We introduce AdaHessian  a second order stochastic optimization algorithm
+which dynamically incorporates the curvature of the loss function via ADAptive
+estimates of the Hessian. Second order algorithms are among the most powerful
+optimization algorithms with superior convergence properties as compared to
+first order methods such as SGD and ADAM. The main disadvantage of traditional
+second order methods is their heavier per iteration computation and poor
+accuracy as compared to first order methods. To address these  we incorporate
+several novel approaches in AdaHessian  including   a new variance reduction
+estimate of the Hessian diagonal with low computational overhead   a
+root mean square exponential moving average to smooth out variations of the
+Hessian diagonal across different iterations  and  a block diagonal
+averaging to reduce the variance of Hessian diagonal elements. We show that
+AdaHessian achieves new state of the art results by a large margin as compared
+to other adaptive optimization methods  including variants of ADAM. In
+particular  we perform extensive tests on CV  NLP  and recommendation system
+tasks and find that AdaHessian   achieves .   .   higher accuracy on
+ResNets  on Cifar  and .   higher accuracy on ImageNet as compared to
+ADAM   outperforms ADAMW for transformers by . BLEU score on
+IWSLT WMT and . PPL on PTB Wikitext   and  achieves .  
+better score than AdaGrad for DLRM on the Criteo Ad Kaggle dataset.
+Importantly  we show that the cost per iteration of AdaHessian is comparable to
+first order methods  and that it exhibits robustness towards its
+hyperparameters. The code for AdaHessian is open sourced and publicly
+available.

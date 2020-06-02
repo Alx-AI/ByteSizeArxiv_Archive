@@ -1,0 +1,15 @@
+Analog ensemble data assimilation and a method for constructing analogs
+with variational autoencoders
+#####
+It is proposed to use analogs of the forecast mean to generate an ensemble of
+perturbations for use in ensemble optimal interpolation or ensemble
+variational methods . A new method of constructing analogs using
+variational autoencoders is proposed . The
+resulting analog methods using analogs from a catalog and using
+constructed analogs are tested in the context of a multiscale
+Lorenz model with standard EnOI and an ensemble square root filter for
+comparison . The use of analogs from a modestly sized catalog is shown to
+improve the performance of EnOI with limited marginal improvements resulting
+from increases in the catalog size . The method using constructed analogs
+is found to perform as well as a full ensemble square root filter
+and to be robust over a wide range of tuning parameters .

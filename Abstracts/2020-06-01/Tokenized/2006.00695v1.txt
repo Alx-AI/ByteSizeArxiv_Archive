@@ -1,0 +1,15 @@
+Random Hyperboxes
+#####
+This paper proposes a simple yet powerful ensemble classifier called Random
+Hyperboxes constructed from individual hyperbox based classifiers trained on
+the random subsets of sample and feature spaces of the training set . We also
+show a generalization error bound of the proposed classifier based on the
+strength of the individual hyperbox based classifiers as well as the
+correlation among them . The effectiveness of the proposed classifier is
+analyzed using a carefully selected illustrative example and compared
+empirically with other popular single and ensemble classifiers via datasets
+using statistical testing methods . The experimental results confirmed that our
+proposed method outperformed other fuzzy min max neural networks popular
+learning algorithms and is competitive with other ensemble methods . Finally
+we identify the existing issues related to the generalization error bounds of
+the real datasets and inform the potential research directions .

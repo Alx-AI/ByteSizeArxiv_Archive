@@ -1,0 +1,18 @@
+Least squares regressions via randomized Hessians
+#####
+We consider the least squares regression problem with a finite number of
+points . We analyze a novel approach based on randomizing the Hessian matrix
+to approximately solve this problem . The new algorithm is a variant of the
+averaged stochastic gradient descent method with constant step size .
+However its updating rule relies on the entire response vector and its
+convergence properties do not depend on the residuals . Without strong convexity
+assumptions it is proven that the algorithm achieves a convergence rate for
+function values of O after k iterations where the constant behind the
+O notation does not depend explicitly on the smallest eigenvalue of the
+Hessian matrix . The algorithm has a preprocessing cost proportional to the
+input size and the running time of each iteration is proportional to the
+dimension . In the strongly convex case a restart version of the algorithm
+yields a convergence rate of O k ^ in O ld time for arbitrary
+l ge where the constant behind the O notation depends on l and on the
+smallest eigenvalue of the Hessian matrix . Our theoretical results are
+illustrated with numerical experiments .

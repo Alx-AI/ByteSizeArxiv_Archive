@@ -1,0 +1,20 @@
+Adversarial Attacks on Reinforcement Learning based Energy Management
+Systems of Extended Range Electric Delivery Vehicles
+#####
+Adversarial examples are firstly investigated in the area of computer vision
+by adding some carefully designed noise to the original input image the
+perturbed image that can not be distinguished from the original one by human
+can fool a well trained classifier easily . In recent years researchers also
+demonstrated that adversarial examples can mislead deep reinforcement learning
+agents on playing video games using image inputs with similar methods .
+However although DRL has been more and more popular in the area of intelligent
+transportation systems there is little research investigating the impacts of
+adversarial attacks on them especially for algorithms that do not take images
+as inputs . In this work we investigated several fast methods to generate
+adversarial examples to significantly degrade the performance of a well trained
+DRL based energy management system of an extended range electric delivery
+vehicle . The perturbed inputs are low dimensional state representations and
+close to the original inputs quantified by different kinds of norms . Our work
+shows that to apply DRL agents on real world transportation systems
+adversarial examples in the form of cyber attack should be considered
+carefully especially for applications that may lead to serious safety issues .

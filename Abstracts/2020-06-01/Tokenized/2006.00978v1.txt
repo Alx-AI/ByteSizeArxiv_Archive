@@ -1,0 +1,21 @@
+On the Number of Linear Regions of Convolutional Neural Networks
+#####
+One fundamental problem in deep learning is understanding the outstanding
+performance of deep Neural Networks in practice . One explanation for the
+superiority of NNs is that they can realize a large class of complicated
+functions i.e. they have powerful expressivity . The expressivity of a ReLU NN
+can be quantified by the maximal number of linear regions it can separate its
+input space into . Various results on the number of linear regions of
+fully connected ReLU NNs have been obtained since . However as far as we
+know there are no explicit results on the number of linear regions for
+Convolutional Neural Networks due to the lack of proper mathematical
+tools . In this paper we provide several mathematical results needed for
+studying the linear regions of CNNs and use them to derive the maximal and
+average numbers of linear regions for one layer ReLU CNNs . Furthermore we
+obtain upper and lower bounds for the number of linear regions of multi layer
+ReLU CNNs . Some asymptotic results are also derived . Our results suggest that
+deeper CNNs have more powerful expressivity than their shallow counterparts
+while CNNs have more expressivity than fully connected NNs per parameter . To
+the best of our knowledge this paper is the first work on the number of linear
+regions for CNNs . Various potential future directions are given at the end of
+this paper .

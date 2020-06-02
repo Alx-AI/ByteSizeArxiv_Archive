@@ -1,0 +1,18 @@
+Latent Domain Learning with Dynamic Residual Adapters
+#####
+A practical shortcoming of deep neural networks is their specialization to a
+single task and domain. While recent techniques in domain adaptation and
+multi domain learning enable the learning of more domain agnostic features 
+their success relies on the presence of domain labels  typically requiring
+manual annotation and careful curation of datasets. Here we focus on a less
+explored  but more realistic case  learning from data from multiple domains 
+without access to domain annotations. In this scenario  standard model training
+leads to the overfitting of large domains  while disregarding smaller ones. We
+address this limitation via dynamic residual adapters  an adaptive gating
+mechanism that helps account for latent domains  coupled with an augmentation
+strategy inspired by recent style transfer techniques. Our proposed approach is
+examined on image classification tasks containing multiple latent domains  and
+we showcase its ability to obtain robust performance across these. Dynamic
+residual adapters significantly outperform off the shelf networks with much
+larger capacity  and can be incorporated seamlessly with existing architectures
+in an end to end manner.

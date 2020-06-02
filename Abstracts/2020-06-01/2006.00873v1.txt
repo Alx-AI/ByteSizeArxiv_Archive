@@ -1,0 +1,16 @@
+A Generalised Signature Method for Time Series
+#####
+The  signature method  refers to a collection of feature extraction
+techniques for multimodal sequential data  derived from the theory of
+controlled differential equations. Variations exist as many authors have
+proposed modifications to the method  so as to improve some aspect of it. Here 
+we introduce a  emph that contains these
+variations as special cases  and groups them conceptually into
+ emph   emph   emph  and  emph.
+Within this framework we are then able to propose novel variations  and
+demonstrate how previously distinct options may be combined. We go on to
+perform an extensive empirical study on  datasets as to which aspects of this
+framework typically produce the best results. Combining the top choices
+produces a canonical pipeline for the generalised signature method  which
+demonstrates state of the art accuracy on benchmark problems in multivariate
+time series classification.

@@ -1,0 +1,22 @@
+Symbol Spotting on Digital Architectural Floor Plans Using a Deep
+Learning based Framework
+#####
+This papers focuses on symbol spotting on real world digital architectural
+floor plans with a deep learning based framework . Traditional on the fly
+symbol spotting methods are unable to address the semantic challenge of
+graphical notation variability i.e. low intra class symbol similarity an
+issue that is particularly important in architectural floor plan analysis . The
+presence of occlusion and clutter characteristic of real world plans along
+with a varying graphical symbol complexity from almost trivial to highly
+complex also pose challenges to existing spotting methods . In this paper we
+address all of the above issues by leveraging recent advances in DL and
+adapting an object detection framework based on the You Only Look Once
+architecture . We propose a training strategy based on tiles avoiding many
+issues particular to DL based object detection networks related to the relative
+small size of symbols compared to entire floor plans aspect ratios and data
+augmentation . Experiments on real world floor plans demonstrate that our method
+successfully detects architectural symbols with low intra class similarity and
+of variable graphical complexity even in the presence of heavy occlusion and
+clutter . Additional experiments on the public SESYD dataset confirm that our
+proposed approach can deal with various degradation and noise levels and
+outperforms other symbol spotting methods .

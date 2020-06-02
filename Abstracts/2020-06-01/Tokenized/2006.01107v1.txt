@@ -1,0 +1,21 @@
+Model Based Reinforcement Learning with Value Targeted Regression
+#####
+This paper studies model based reinforcement learning for regret
+minimization . We focus on finite horizon episodic RL where the transition model
+P belongs to a known family of models mathcal a special case of which
+is when models in mathcal take the form of linear mixtures P _
+sum _ ^ theta_P _ . We propose a model based RL algorithm that is
+based on optimism principle In each episode the set of models that are
+consistent with the data collected is constructed . The criterion of
+consistency is based on the total squared error of that the model incurs on the
+task of predicting emph as determined by the last value estimate along
+the transitions . The next value function is then chosen by solving the
+optimistic planning problem with the constructed set of models . We derive a
+bound on the regret which in the special case of linear mixtures the regret
+bound takes the form tilde mathcal d sqrt H ^ T where H T and
+d are the horizon total number of steps and dimension of theta
+respectively . In particular this regret bound is independent of the total
+number of states or actions and is close to a lower bound
+Omega . For a general model family mathcal the regret
+bound is derived using the notion of the so called Eluder dimension proposed by
+Russo Van Roy .

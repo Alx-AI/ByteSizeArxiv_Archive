@@ -1,0 +1,11 @@
+A Combined Approach To Detect Key Variables In Thick Data Analytics
+#####
+In machine learning one of the strategic tasks is the selection of only
+significant variables as predictors for the response . In this paper an
+approach is proposed which consists in the application of permutation tests on
+the candidate predictor variables in the aim of identifying only the most
+informative ones . Several industrial problems may benefit from such an
+approach and an application in the field of chemical analysis is presented . A
+comparison is carried out between the approach proposed and Lasso that is one
+of the most common alternatives for feature selection available in the
+literature .

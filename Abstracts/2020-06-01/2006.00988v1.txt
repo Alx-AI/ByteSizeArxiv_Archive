@@ -1,0 +1,14 @@
+Attention Word Embedding
+#####
+Word embedding models learn semantically rich vector representations of words
+and are widely used to initialize natural processing language  models. The
+popular continuous bag of words  model of wordvec learns a vector
+embedding by masking a given word in a sentence and then using the other words
+as a context to predict it. A limitation of CBOW is that it equally weights the
+context words when making a prediction  which is inefficient  since some words
+have higher predictive value than others. We tackle this inefficiency by
+introducing the Attention Word Embedding  model  which integrates the
+attention mechanism into the CBOW model. We also propose AWE S  which
+incorporates subword information. We demonstrate that AWE and AWE S outperform
+the state of the art word embedding models both on a variety of word similarity
+datasets and when used for initialization of NLP models.

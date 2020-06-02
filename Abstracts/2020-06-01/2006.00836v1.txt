@@ -1,0 +1,19 @@
+Multi scale Cloud Detection in Remote Sensing Images using a Dual
+  Convolutional Neural Network
+#####
+Semantic segmentation by convolutional neural networks  has advanced the
+state of the art in pixel level classification of remote sensing images.
+However  processing large images typically requires analyzing the image in
+small patches  and hence features that have large spatial extent still cause
+challenges in tasks such as cloud masking. To support a wider scale of spatial
+features while simultaneously reducing computational requirements for large
+satellite images  we propose an architecture of two cascaded CNN model
+components successively processing undersampled and full resolution images. The
+first component distinguishes between patches in the inner cloud area from
+patches at the cloud s boundary region. For the cloud ambiguous edge patches
+requiring further segmentation  the framework then delegates computation to a
+fine grained model component. We apply the architecture to a cloud detection
+dataset of complete Sentinel  multispectral images  approximately annotated
+for minimal false negatives in a land use application. On this specific task
+and data  we achieve a    relative improvement in pixel accuracy over a CNN
+baseline based on patching.

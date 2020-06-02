@@ -1,0 +1,13 @@
+Learning Irreducible Representations of Noncommutative Lie Groups
+#####
+Recent work has made exciting theoretical and practical progress towards
+neural networks that are equivariant to symmetries such as rotations . However
+current techniques require explicit group representations which generally
+limits us to those groups with analytically derived matrix formulas . In this
+work we present a numerical technique for finding irreducible representations
+of noncommutative Lie groups . We demonstrate that the structure of the Lie
+algebras associated with these groups can be used to learn explicit
+representation matrices to high precision . This provides an automated program
+to build neural networks that are equivariant to a much wider class of
+transformations including previously intractable cases such as the Poincar e
+group .

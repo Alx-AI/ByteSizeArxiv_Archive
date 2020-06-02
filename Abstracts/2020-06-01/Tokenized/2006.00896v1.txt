@@ -1,0 +1,16 @@
+Pruning via Iterative Ranking of Sensitivity Statistics
+#####
+With the introduction of SNIP it has been demonstrated
+that modern neural networks can effectively be pruned before training . Yet its
+sensitivity criterion has since been criticized for not propagating training
+signal properly or even disconnecting layers . As a remedy GraSP
+was introduced compromising on simplicity . However in
+this work we show that by applying the sensitivity criterion iteratively in
+smaller steps still before training we can improve its performance without
+difficult implementation . As such we introduce SNIP it . We then demonstrate
+how it can be applied for both structured and unstructured pruning before
+and or during training therewith achieving state of the art
+sparsity performance trade offs . That is while already providing the
+computational benefits of pruning in the training process from the start .
+Furthermore we evaluate our methods on robustness to overfitting
+disconnection and adversarial attacks as well .

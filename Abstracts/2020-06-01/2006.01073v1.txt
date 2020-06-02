@@ -1,0 +1,18 @@
+Analysis of Least Squares Regularized Regression in Reproducing Kernel
+  Krein Spaces
+#####
+In this paper  we study the asymptotical properties of least squares
+regularized regression with indefinite kernels in reproducing kernel Kre un
+spaces . The classical approximation analysis cannot be directly applied
+to study its asymptotical behavior under the framework of learning theory as
+this problem is in essence non convex and outputs stationary points. By
+introducing a bounded hyper sphere constraint to such non convex regularized
+risk minimization problem  we theoretically demonstrate that this problem has a
+globally optimal solution with a closed form on the sphere  which makes our
+approximation analysis feasible in RKKS. Accordingly  we modify traditional
+error decomposition techniques  prove convergence results for the introduced
+hypothesis error based on matrix perturbation theory  and derive learning rates
+of such regularized regression problem in RKKS. Under some conditions  the
+derived learning rates in RKKS are the same as that in reproducing kernel
+Hilbert spaces   which is actually the first work on approximation
+analysis of regularized learning algorithms in RKKS.

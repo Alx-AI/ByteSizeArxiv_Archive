@@ -1,0 +1,14 @@
+Better scalability under potentially heavy tailed gradients
+#####
+We study a scalable alternative to robust gradient descent  techniques
+that can be used when the gradients can be heavy tailed  though this will be
+unknown to the learner. The core technique is simple  instead of trying to
+robustly aggregate gradients at each step  which is costly and leads to
+sub optimal dimension dependence in risk bounds  we choose a candidate which
+does not diverge too far from the majority of cheap stochastic sub processes
+run for a single pass over partitioned data. In addition to formal guarantees 
+we also provide empirical analysis of robustness to perturbations to
+experimental conditions  under both sub Gaussian and heavy tailed data. The
+result is a procedure that is simple to implement  trivial to parallelize 
+which keeps the formal strength of RGD methods but scales much better to large
+learning problems.

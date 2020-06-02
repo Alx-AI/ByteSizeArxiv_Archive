@@ -1,0 +1,19 @@
+Acme  A Research Framework for Distributed Reinforcement Learning
+#####
+Deep reinforcement learning has led to many recent and
+groundbreaking advancements. However  these advances have often come at the
+cost of both the scale and complexity of the underlying RL algorithms.
+Increases in complexity have in turn made it more difficult for researchers to
+reproduce published RL algorithms or rapidly prototype ideas. To address this 
+we introduce Acme  a tool to simplify the development of novel RL algorithms
+that is specifically designed to enable simple agent implementations that can
+be run at various scales of execution. Our aim is also to make the results of
+various RL algorithms developed in academia and industrial labs easier to
+reproduce and extend. To this end we are releasing baseline implementations of
+various algorithms  created using our framework. In this work we introduce the
+major design decisions behind Acme and show how these are used to construct
+these baselines. We also experiment with these agents at different scales of
+both complexity and computation including distributed versions. Ultimately  we
+show that the design decisions behind Acme lead to agents that can be scaled
+both up and down and that  for the most part  greater levels of parallelization
+result in agents with equivalent performance  just faster.

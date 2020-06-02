@@ -1,0 +1,10 @@
+Temporal Differential Learning in Continuous Environments
+#####
+In this paper  a new reinforcement learning  method known as the method
+of temporal differential is introduced. Compared to the traditional
+temporal difference learning method  it plays a crucial role in developing
+novel RL techniques for continuous environments. In particular  the
+continuous time least squares policy evaluation  and the
+continuous time temporal differential  learning methods are developed.
+Both theoretical and empirical evidences are provided to demonstrate the
+effectiveness of the proposed temporal differential learning methodology.
