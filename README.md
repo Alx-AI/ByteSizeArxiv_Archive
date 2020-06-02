@@ -1,28 +1,44 @@
 For use downloading, preprocessing, and ideally summarizing arxiv articles as they are posted.
-Use DL&PP to download and preprocess 
-tokenizeText to tokenize
-run new make data to pack the tokenized data into jsons within tars
-unzip the tars and you are prepared for the original "Train your own models" section here:https://github.com/ChenRocks/fast_abs_rl pasted below
-*Note you can skip all of the steps above if you use the already converted files in library/finished/train or test or val
-Make sure to change the 'DATA' environmental variable and all Paths in 
-To re-train our best model:
 
-    pretrained a word2vec word embedding
+Model compatability checklist:
 
-python train_word2vec.py --path=[path/to/word2vec]
+	word2vec - done
+	extraction labels - done
+	-------------------------
+	abstractor - incomplete
+	extractor - incomplete
+	full model - incomplete
 
-    make the pseudo-labels
 
-python make_extraction_labels.py
+How to use:
 
-    train abstractor and extractor using ML objectives
+	Use "DL&PP" to download and preprocess 
+	"tokenizeText" to tokenize
+	run new make data to pack the tokenized data into jsons within tars
+	unzip the tars and you are prepared for the original "Train your own models" section 
+	here:https://github.com/ChenRocks/fast_abs_rl pasted below
+Make sure to change the 'DATA' environmental variable, universal pathing structure under construction
 
-python train_abstractor.py --path=[path/to/abstractor/model] --w2v=[path/to/word2vec/word2vec.128d.226k.bin]
-python train_extractor_ml.py --path=[path/to/extractor/model] --w2v=[path/to/word2vec/word2vec.128d.226k.bin]
 
-    train the full RL model
+-----------------------
+ChunRocks/fast_abs_rl - How to re-train our best model:
 
-python train_full_rl.py --path=[path/to/save/model] --abs_dir=[path/to/abstractor/model] --ext_dir=[path/to/extractor/model]
+pretrained a word2vec word embedding
+
+	python train_word2vec.py --path=[path/to/word2vec]
+
+make the pseudo-labels
+
+	python make_extraction_labels.py
+
+train abstractor and extractor using ML objectives
+
+	python train_abstractor.py --path=[path/to/abstractor/model] --w2v=[path/to/word2vec/word2vec.128d.226k.bin]
+	python train_extractor_ml.py --path=[path/to/extractor/model] --w2v=[path/to/word2vec/word2vec.128d.226k.bin]
+
+train the full RL model
+
+	python train_full_rl.py --path=[path/to/save/model] --abs_dir=[path/to/abstractor/model] --ext_dir=[path/to/extractor/model]
 
 After the training finishes you will be able to run the decoding and evaluation following the instructions in the previous section.
 
