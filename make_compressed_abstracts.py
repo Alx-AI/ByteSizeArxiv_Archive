@@ -36,7 +36,8 @@ def queryByCat(Category):
     # Search parameters
     #search_query = 'cat:cs.LG' # search in the machine learning category
 
-    query = 'search_query=%s&max_results=100&sortBy=submittedDate&sortOrder=descending' % (search_query)                                                
+    query = 'search_query=%s&max_results=100&sortBy=submittedDate&sortOrder=descending' % (search_query)
+    print(query)                                                
                                                 
     #List of paper entries with all info
     corpusEntry=[]
@@ -70,9 +71,10 @@ def saveTXT(corpusEntry,theDate):
         theID = paper.id.rsplit('/',1)[1]
         newFile = Path(library / (theID+".txt")) 
         prePro(paper.title)
-        print (newFile)
-        with open(newFile, 'a+') as myfile:
-            myfile.write(prePro(paper.title) + "#####" +prePro(paper.summary))
+        #print (newFile)
+        if not os.path.exists(newFile):
+            with open(newFile, 'a+', encoding = 'utf-8') as myfile:
+                myfile.write(prePro(paper.title) + " ##### " +prePro(paper.summary))
 
 #Preprocess the text into bullets
 def prePro(text):
@@ -105,14 +107,13 @@ def tfIDF(corpusEntry):
 
 #Compress the abstract
 def compress(tokenizedDir,tfidf_dict):
-    library = []
     tokenizedDir = str(tokenizedDir)
     theFiles = glob.glob((tokenizedDir+"\*.txt"))
     for files in theFiles:
         with open(files, 'r') as theFile:
             for entry in theFile:
                 #Get rid of the title
-                title,entry = entry.split('#####')
+                title,entry = entry.split(' ##### ')
                 #Lists to hold the highest scoring sentences and their scores
                 top3_sentences = []
                 top3_scores = []
@@ -153,10 +154,14 @@ def compress(tokenizedDir,tfidf_dict):
                         top3_sentences.append(sentence)
                         top3_scores.append(sentenceTotal)
             theFile.close()
+
         with open(files, 'w') as theFile:
             theFile.write(title + "\n")
             for sentence in top3_sentences:
-                theFile.write(sentence[1:]+"\n")
+                if sentence[0] == ' ':
+                    theFile.write(sentence[1:] + "\n")
+                else:
+                    theFile.write(sentence +"\n")
 
                      
 
