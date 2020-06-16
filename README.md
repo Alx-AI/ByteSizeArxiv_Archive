@@ -1,4 +1,5 @@
-For use downloading, preprocessing, and ideally summarizing arxiv articles as they are posted.
+For use downloading, preprocessing, and summarizing arxiv articles as they are posted.
+This was an attempt to recreate abstracts via summarization of full articles. BSA is now focused on summarizing already written Abstracts using TF-IDF. This is COMPLETE! See 'makeCompressedAbstracts.py'
 
 Model compatability checklist:
 
