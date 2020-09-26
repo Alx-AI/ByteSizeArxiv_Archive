@@ -1,3 +1,5 @@
+Implements ChunRocks/fast_abs_rl and Stanford Core Natural Language Processing 
+
 For use downloading, preprocessing, and summarizing arxiv articles as they are posted.
 This was an attempt to recreate abstracts via summarization of full articles. BSA is now focused on summarizing already written Abstracts using TF-IDF. This is COMPLETE! See 'makeCompressedAbstracts.py'
 
